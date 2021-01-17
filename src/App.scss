@@ -1,1 +1,11 @@
 @import "../node_modules/bulma/bulma.sass";
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  & > div {
+    flex: 1;
+  }
+}
