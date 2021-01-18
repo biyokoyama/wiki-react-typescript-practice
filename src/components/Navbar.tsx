@@ -2,11 +2,20 @@ import React from "react";
 import { Link, Switch, Route } from "react-router-dom";
 import logo from "../logo.png";
 import SearchForm from "./SearchForm";
-import "./Navbar.scss";
+import styled from "styled-components";
+
+const Wrapper = styled.nav`
+  .navbar__title {
+    margin-left: 1rem;
+  }
+  .navbar__item-search-form {
+    width: 85%;
+  }
+`;
 
 const Navbar: React.FC = () => {
   return (
-    <nav className="navbar is-light">
+    <Wrapper className="navbar is-light">
       <div className="navbar-brand">
         <Link to="/" className="navbar-item">
           <span className="image is-24x24">
@@ -22,7 +31,7 @@ const Navbar: React.FC = () => {
           </Route>
         </Switch>
       </div>
-    </nav>
+    </Wrapper>
   );
 };
 

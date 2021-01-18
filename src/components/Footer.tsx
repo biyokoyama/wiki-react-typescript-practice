@@ -1,10 +1,14 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./Footer.scss";
+import styled from "styled-components";
+
+const Wrapper = styled.footer`
+  padding: 3rem;
+`;
 
 const Footer: React.FC = () => {
   return (
-    <footer className="footer has-background-light">
+    <Wrapper className="footer has-background-light">
       <div className="field is-grouped is-grouped-centered">
         <p className="control">©︎2020 biyokoyama</p>
         <p className="control">
@@ -19,7 +23,7 @@ const Footer: React.FC = () => {
           </a>
         </p>
       </div>
-    </footer>
+    </Wrapper>
   );
 };
 

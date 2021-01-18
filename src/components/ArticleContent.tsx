@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import { ArticleEntity } from "../classes/article";
 import { ArticleContentFormData } from "../types/article";
-import "./ArticleContent.scss";
+import styled from "styled-components";
+
+const Wrapper = styled.div`
+  .article-content__body-paragraph {
+    white-space: pre-wrap;
+  }
+`;
 
 type Props = {
   article: ArticleEntity;
@@ -54,7 +60,7 @@ const ArticleContent: React.FC<Props> = (props: Props) => {
   };
 
   return (
-    <div className="article-content content">
+    <Wrapper className="article-content content">
       <div className="field is-grouped">
         <div className="control is-expanded">
           {!isEditing && <h1 className="title">{props.article.title}</h1>}
@@ -105,7 +111,7 @@ const ArticleContent: React.FC<Props> = (props: Props) => {
           )}
         </div>
       </div>
-    </div>
+    </Wrapper>
   );
 };
 

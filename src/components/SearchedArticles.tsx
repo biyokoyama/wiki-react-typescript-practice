@@ -1,15 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ArticleEntity } from "../classes/article";
-import "./SearchedArticles.scss";
+import styled from "styled-components";
 
 type Props = {
   articles: ArticleEntity[];
 };
 
+const Wrapper = styled.div`
+  .box:hover {
+    box-shadow: 0 10px 16px rgba(0, 0, 0, 0.13), 0 6px 6px rgba(0, 0, 0, 0.19);
+    transition: 0.5s;
+  }
+`;
+
 const SearchedArticles: React.FC<Props> = (props: Props) => {
   return (
-    <div className="searched-articles section">
+    <Wrapper className="searched-articles section">
       <div className="container">
         <div className="content">
           {props.articles.map((article) => {
@@ -22,7 +29,7 @@ const SearchedArticles: React.FC<Props> = (props: Props) => {
           })}
         </div>
       </div>
-    </div>
+    </Wrapper>
   );
 };
 

@@ -5,11 +5,21 @@ import Footer from "./components/Footer";
 import indexView from "./views";
 import searchView from "./views/search";
 import articlesIdView from "./views/articles/_id";
-import "./App.scss";
+import styled from "styled-components";
+
+const Wrapper = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  & > div {
+    flex: 1;
+  }
+`;
 
 const App: React.FC = () => {
   return (
-    <div id="app" className="app">
+    <Wrapper id="app" className="app">
       <BrowserRouter>
         <Navbar />
         <Route exact path="/" component={indexView} />
@@ -17,7 +27,7 @@ const App: React.FC = () => {
         <Route exact path="/articles/:id" component={articlesIdView} />
         <Footer />
       </BrowserRouter>
-    </div>
+    </Wrapper>
   );
 };
 
