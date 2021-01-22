@@ -3,6 +3,7 @@ import { Link, Switch, Route } from "react-router-dom";
 import logo from "../logo.png";
 import SearchForm from "./SearchForm";
 import styled from "styled-components";
+import AxiosSample from "./AxiosSample";
 
 const Wrapper = styled.nav`
   .navbar__title {
@@ -16,6 +17,7 @@ const Wrapper = styled.nav`
 const Navbar: React.FC = () => {
   return (
     <Wrapper className="navbar is-light">
+      <AxiosSample />
       <div className="navbar-brand">
         <Link to="/" className="navbar-item">
           <span className="image is-24x24">
