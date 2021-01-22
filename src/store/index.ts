@@ -1,8 +1,8 @@
 import { combineReducers, createStore } from "redux";
-import { sampleReducer } from "./sample";
+import { searchFormReducer } from "./searchForm";
 
 export const rootReducer = combineReducers({
-  sample: sampleReducer,
+  searchForm: searchFormReducer,
 });
 export type RootState = ReturnType<typeof rootReducer>;
 
