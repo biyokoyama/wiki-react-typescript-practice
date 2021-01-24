@@ -1,5 +1,8 @@
 # wiki-react-typescript-practice
 
+![github pages](https://github.com/biyokoyama/wiki-react-typescript-practice/workflows/github%20pages/badge.svg)
+[![codecov](https://codecov.io/gh/biyokoyama/wiki-react-typescript-practice/branch/main/graph/badge.svg?token=LK6u8uuGoE)](https://codecov.io/gh/biyokoyama/wiki-react-typescript-practice) 
+
 ## Note
 
 ### Lint
