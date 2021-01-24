@@ -1,29 +1,38 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
+import axios from "../axios";
+import { RootState } from "../store";
+import { ArticleData } from "../types/article";
 import { ArticleEntity } from "../classes/article";
 import SearchedArticles from "../components/SearchedArticles";
 
-const sampleArticles: ArticleEntity[] = [
-  new ArticleEntity({
-    id: 1001,
-    title: "サンプル記事1タイトル",
-    body: "サンプル記事1本文\n本文\n本文本文\n本文本文本文",
-  }),
-  new ArticleEntity({
-    id: 1002,
-    title: "サンプル記事2タイトル",
-    body: "サンプル記事2本文\n本文\n本文本文\n本文本文本文",
-  }),
-  new ArticleEntity({
-    id: 1003,
-    title: "サンプル記事3タイトル",
-    body: "サンプル記事3本文\n本文\n本文本文\n本文本文本文",
-  }),
-];
-
 const searchView: React.FC = () => {
+  /**
+   * store state
+   */
+  const searchFormState = useSelector((state: RootState) => {
+    return state.searchForm;
+  });
+
+  /**
+   * local state
+   */
+  const initialArticlesState: ArticleEntity[] = [];
+  const [articlesState, setArticlesState] = useState(initialArticlesState);
+
+  useEffect(() => {
+    axios.get(`/api/articles?q=${searchFormState.query}`).then((response) => {
+      setArticlesState(
+        response.data.map(
+          (articleData: ArticleData) => new ArticleEntity(articleData)
+        )
+      );
+    });
+  }, [searchFormState]);
+
   return (
     <div className="search has-background-light">
-      <SearchedArticles articles={sampleArticles} />
+      <SearchedArticles articles={articlesState} />
     </div>
   );
 };
