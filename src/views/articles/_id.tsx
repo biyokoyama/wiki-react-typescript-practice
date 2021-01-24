@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "../../axios";
 import { ArticleEntity } from "../../classes/article";
 import ArticleContent from "../../components/ArticleContent";
+import { SaveArticleContentForm } from "../../types/article";
 
 const articlesIdView: React.FC = () => {
   type Params = {
@@ -24,11 +25,27 @@ const articlesIdView: React.FC = () => {
     });
   }, []);
 
+  const saveArticleContentForm: SaveArticleContentForm = (
+    articleContentFormData
+  ) => {
+    axios.put(`/api/articles/${articleId}`, articleContentFormData).then(() => {
+      setArticleState(
+        new ArticleEntity({
+          id: articleId,
+          ...articleContentFormData,
+        })
+      );
+    });
+  };
+
   return (
     <div className="articles-id">
       <div className="section">
         <div className="container">
-          <ArticleContent article={articleState} />
+          <ArticleContent
+            article={articleState}
+            saveArticleContentForm={saveArticleContentForm}
+          />
         </div>
       </div>
     </div>

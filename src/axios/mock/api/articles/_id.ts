@@ -1,5 +1,5 @@
 import { AxiosRequestConfig } from "axios";
-import { ArticleData } from "../../../../types/article";
+import { ArticleContentFormData, ArticleData } from "../../../../types/article";
 import { mockRoute } from "../../../mock";
 import { articles } from "../../_data/articles";
 
@@ -26,5 +26,24 @@ export const mockApiArticlesIdGet: mockRoute = (mockAdapter) => {
     if (!article) return [404];
 
     return [200, article];
+  });
+};
+
+export const mockApiArticlesIdPut: mockRoute = (mockAdapter) => {
+  mockAdapter.onPut(apiArticlesIdRegexp).reply((config: AxiosRequestConfig) => {
+    const articleId = getArticleIdFromUrl(`${config.url}`);
+    const article: ArticleData | null = articleId
+      ? findArticleById(articleId)
+      : null;
+
+    if (!article) return [404];
+
+    const articleContentFormData: ArticleContentFormData = JSON.parse(
+      config.data
+    );
+    article.title = articleContentFormData.title;
+    article.body = articleContentFormData.body;
+
+    return [200];
   });
 };

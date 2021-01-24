@@ -8,3 +8,7 @@ export type ArticleContentFormData = {
   title: string;
   body: string;
 };
+
+export type SaveArticleContentForm = (
+  articleContentFormData: ArticleContentFormData
+) => void;

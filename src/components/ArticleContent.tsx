@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { ArticleEntity } from "../classes/article";
-import { ArticleContentFormData } from "../types/article";
+import {
+  ArticleContentFormData,
+  SaveArticleContentForm,
+} from "../types/article";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -11,6 +14,7 @@ const Wrapper = styled.div`
 
 type Props = {
   article: ArticleEntity;
+  saveArticleContentForm: SaveArticleContentForm;
 };
 
 const ArticleContent: React.FC<Props> = (props: Props) => {
@@ -51,6 +55,7 @@ const ArticleContent: React.FC<Props> = (props: Props) => {
   };
 
   const handleClickSave = (): void => {
+    props.saveArticleContentForm(articleContentForm);
     setIsEditing(!isEditing);
   };
 
