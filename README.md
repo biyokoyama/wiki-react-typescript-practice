@@ -3,6 +3,12 @@
 ![github pages](https://github.com/biyokoyama/wiki-react-typescript-practice/workflows/github%20pages/badge.svg)
 [![codecov](https://codecov.io/gh/biyokoyama/wiki-react-typescript-practice/branch/main/graph/badge.svg?token=LK6u8uuGoE)](https://codecov.io/gh/biyokoyama/wiki-react-typescript-practice) 
 
+練習のため、[wiki-vue-typescript-practice](https://github.com/biyokoyama/wiki-vue-typescript-practice)をReactで作り直しています。  
+
+デモページ↓  
+https://biyokoyama.github.io/wiki-react-typescript-practice/search?q=  
+※ モック機構を使っているため、永続化の仕組みはありません。編集できる風ですが、ブラウザリロードすると元に戻ります。  
+
 ## Note
 
 ### Lint
