@@ -15,10 +15,10 @@ jobs:
           node-version: '12.x'
       - run: yarn install --frozen-lockfile
       - run: yarn build:gh-pages
-      # - run: yarn test:unit:coverage
-      # - uses: codecov/codecov-action@v1
-      #   with:
-      #     token: ${{ secrets.CODECOV_TOKEN }}
+      - run: CI=true yarn test --coverage
+      - uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
       - run: cp build/index.html build/404.html
       - uses: peaceiris/actions-gh-pages@v3
         with:
