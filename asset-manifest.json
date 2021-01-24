@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "https://biyokoyama.github.io/wiki-react-typescript-practice/static/css/main.a1fcc054.chunk.css",
-    "main.js": "https://biyokoyama.github.io/wiki-react-typescript-practice/static/js/main.f662012a.chunk.js",
-    "main.js.map": "https://biyokoyama.github.io/wiki-react-typescript-practice/static/js/main.f662012a.chunk.js.map",
+    "main.js": "https://biyokoyama.github.io/wiki-react-typescript-practice/static/js/main.6a9fd75c.chunk.js",
+    "main.js.map": "https://biyokoyama.github.io/wiki-react-typescript-practice/static/js/main.6a9fd75c.chunk.js.map",
     "runtime-main.js": "https://biyokoyama.github.io/wiki-react-typescript-practice/static/js/runtime-main.13b8c5ca.js",
     "runtime-main.js.map": "https://biyokoyama.github.io/wiki-react-typescript-practice/static/js/runtime-main.13b8c5ca.js.map",
     "static/js/2.b87b6cb9.chunk.js": "https://biyokoyama.github.io/wiki-react-typescript-practice/static/js/2.b87b6cb9.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.13b8c5ca.js",
     "static/js/2.b87b6cb9.chunk.js",
     "static/css/main.a1fcc054.chunk.css",
-    "static/js/main.f662012a.chunk.js"
+    "static/js/main.6a9fd75c.chunk.js"
   ]
 }
