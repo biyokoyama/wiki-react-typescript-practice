@@ -6,6 +6,7 @@ import indexView from "./views";
 import searchView from "./views/search";
 import articlesIdView from "./views/articles/_id";
 import styled from "styled-components";
+import { basePath } from "./destination";
 
 const Wrapper = styled.div`
   min-height: 100vh;
@@ -20,7 +21,7 @@ const Wrapper = styled.div`
 const App: React.FC = () => {
   return (
     <Wrapper id="app" className="app">
-      <BrowserRouter>
+      <BrowserRouter basename={basePath}>
         <Navbar />
         <Route exact path="/" component={indexView} />
         <Route exact path="/search" component={searchView} />

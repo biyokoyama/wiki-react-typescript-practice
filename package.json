@@ -28,6 +28,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build:gh-pages": "PUBLIC_URL=https://biyokoyama.github.io/wiki-react-typescript-practice react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint:fix": "eslint ./src --fix"
